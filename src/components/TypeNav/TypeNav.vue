@@ -6,7 +6,7 @@
     <!-- <h3>{{ catelistll }}</h3> -->
     <div class="container">
       <div @mouseleave="hiddenStyle" @mouseenter="showNavStyle" class="quantop">
-        <h2 class="all">全部书籍分类</h2>
+        <h2 class="all">全部书籍分类11111</h2>
         <!-- 过渡动画 -->
         <transition name="sort">
           <div class="sort" v-show="navShow">
