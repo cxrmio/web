@@ -64,22 +64,6 @@ export default [
         next(false)
       }
     }
-  },
-  {
-    name: 'center',
-    path: '/center',
-    component: () => import('@/pages/Center'),
-    meta: { show: true },
-    children: [
-      {
-        path: 'grouporder',
-        component: () => import('@/pages/Center/OrderCenter')
-      },
-      {
-        path: '/center',
-        redirect: '/center/myorder'
-      }
-    ]
   }
 
   // { name: 'search', path: '/search', component: MySearch, meta: { show: true } }

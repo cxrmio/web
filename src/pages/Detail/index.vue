@@ -24,39 +24,15 @@
         <div class="InfoWrap">
           <div class="goodsDetail">
             <h3 class="InfoName">{{ skuInfo.skuName }}</h3>
-            <p class="news">推荐选择下方[移动优惠购],手机套餐齐搞定,不用换号,每月还有花费返</p>
             <div class="priceArea">
               <div class="priceArea1">
                 <div class="title">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>
                 <div class="price">
                   <i>¥</i>
                   <em>{{ skuInfo.price }}</em>
-                  <span>降价通知</span>
-                </div>
-                <div class="remark">
-                  <i>累计评价</i>
-                  <em>65545</em>
                 </div>
               </div>
-              <div class="priceArea2">
-                <div class="title">
-                  <i>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</i>
-                </div>
-                <div class="fixWidth">
-                  <i class="red-bg">加价购</i>
-                  <em class="t-gray">满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换购热销商品</em>
-                </div>
-              </div>
-            </div>
-            <div class="support">
-              <div class="supportArea">
-                <div class="title">支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</div>
-                <div class="fixWidth">以旧换新，闲置手机回收 4G套餐超值抢 礼品购</div>
-              </div>
-              <div class="supportArea">
-                <div class="title">配 送 至</div>
-                <div class="fixWidth">广东省 深圳市 宝安区</div>
-              </div>
+              
             </div>
           </div>
 
@@ -93,189 +69,13 @@
 
     <!-- 内容详情页 -->
     <section class="product-detail">
-      <aside class="aside">
-        <div class="tabWraped">
-          <h4 class="active">相关分类</h4>
-          <h4>推荐品牌</h4>
-        </div>
-        <div class="tabContent">
-          <div class="tab-pane active">
-            <ul class="partList">
-              <li>手机</li>
-              <li>手机壳</li>
-              <li>内存卡</li>
-              <li>Iphone配件</li>
-              <li>贴膜</li>
-              <li>手机耳机</li>
-              <li>移动电源</li>
-              <li>平板电脑</li>
-            </ul>
-            <ul class="goodsList">
-              <li>
-                <div class="list-wrap">
-                  <div class="p-img">
-                    <img src="./images/part01.png" />
-                  </div>
-                  <div class="attr">Apple苹果iPhone 6s (A1699)</div>
-                  <div class="price">
-                    <em>¥</em>
-                    <i>6088.00</i>
-                  </div>
-                  <div class="operate">
-                    <a href="javascript:void(0);">加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="list-wrap">
-                  <div class="p-img">
-                    <img src="./images/part02.png" />
-                  </div>
-                  <div class="attr">
-                    <em>Apple苹果iPhone 6s (A1699)</em>
-                  </div>
-                  <div class="price">
-                    <strong>
-                      <em>¥</em>
-                      <i>6088.00</i>
-                    </strong>
-                  </div>
-                  <div class="operate">
-                    <a href="javascript:void(0);">加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="list-wrap">
-                  <div class="p-img">
-                    <img src="./images/part03.png" />
-                  </div>
-                  <div class="attr">
-                    <em>Apple苹果iPhone 6s (A1699)</em>
-                  </div>
-                  <div class="price">
-                    <strong>
-                      <em>¥</em>
-                      <i>6088.00</i>
-                    </strong>
-                  </div>
-                  <div class="operate">
-                    <a href="javascript:void(0);">加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="list-wrap">
-                  <div class="p-img">
-                    <img src="./images/part02.png" />
-                  </div>
-                  <div class="attr">
-                    <em>Apple苹果iPhone 6s (A1699)</em>
-                  </div>
-                  <div class="price">
-                    <strong>
-                      <em>¥</em>
-                      <i>6088.00</i>
-                    </strong>
-                  </div>
-                  <div class="operate">
-                    <a href="javascript:void(0);">加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="list-wrap">
-                  <div class="p-img">
-                    <img src="./images/part03.png" />
-                  </div>
-                  <div class="attr">
-                    <em>Apple苹果iPhone 6s (A1699)</em>
-                  </div>
-                  <div class="price">
-                    <strong>
-                      <em>¥</em>
-                      <i>6088.00</i>
-                    </strong>
-                  </div>
-                  <div class="operate">
-                    <a href="javascript:void(0);">加入购物车</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-pane">
-            <p>推荐品牌</p>
-          </div>
-        </div>
-      </aside>
       <div class="detail">
         <div class="fitting">
-          <h4 class="kt">选择搭配</h4>
-          <div class="good-suits">
-            <div class="master">
-              <img src="./images/l-m01.png" />
-              <p>￥5299</p>
-              <i>+</i>
-            </div>
-            <ul class="suits">
-              <li class="suitsItem">
-                <img src="./images/dp01.png" />
-                <p>Feless费勒斯VR</p>
-                <label>
-                  <input type="checkbox" value="39" />
-                  <span>39</span>
-                </label>
-              </li>
-              <li class="suitsItem">
-                <img src="./images/dp02.png" />
-                <p>Feless费勒斯VR</p>
-                <label>
-                  <input type="checkbox" value="50" />
-                  <span>50</span>
-                </label>
-              </li>
-              <li class="suitsItem">
-                <img src="./images/dp03.png" />
-                <p>Feless费勒斯VR</p>
-                <label>
-                  <input type="checkbox" value="59" />
-                  <span>59</span>
-                </label>
-              </li>
-              <li class="suitsItem">
-                <img src="./images/dp04.png" />
-                <p>Feless费勒斯VR</p>
-                <label>
-                  <input type="checkbox" value="99" />
-                  <span>99</span>
-                </label>
-              </li>
-            </ul>
-            <div class="result">
-              <div class="num">已选购0件商品</div>
-              <div class="price-tit">套餐价</div>
-              <div class="price">￥5299</div>
-              <button class="addshopcar">加入购物车</button>
-            </div>
-          </div>
         </div>
         <div class="intro">
           <ul class="tab-wraped">
             <li class="active">
               <a href="###"> 商品介绍 </a>
-            </li>
-            <li>
-              <a href="###"> 规格与包装 </a>
-            </li>
-            <li>
-              <a href="###"> 售后保障 </a>
-            </li>
-            <li>
-              <a href="###"> 商品评价 </a>
-            </li>
-            <li>
-              <a href="###"> 手机社区 </a>
             </li>
           </ul>
           <div class="tab-content">
@@ -296,11 +96,7 @@
                 <li>像素：1000-1600万</li>
                 <li>机身内存：64GB</li>
               </ul>
-              <div class="intro-detail">
-                <img src="./images/intro01.png" />
-                <img src="./images/intro02.png" />
-                <img src="./images/intro03.png" />
-              </div>
+              
             </div>
             <div id="two" class="tab-pane">
               <p>规格与包装</p>
@@ -316,7 +112,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </section>
   </div>
 </template>
