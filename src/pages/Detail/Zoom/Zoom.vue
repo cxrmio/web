@@ -22,31 +22,6 @@ export default {
     this.$bus.$on('getindex', (index) => {
       this.curIndex = index
     })
-  },
-  methods: {
-    // 鼠标移动放大镜子
-    handler(e) {
-      // console.log(123)
-      const mask = this.$refs.mask
-      const parsent = this.$refs.parsent
-      const big = this.$refs.big
-      const max = parsent.offsetWidth - mask.offsetWidth
-      let left = e.offsetX - mask.offsetWidth / 2
-      let top = e.offsetY - mask.offsetWidth / 2
-
-      if (left <= 0) left = 0
-      if (left >= max) left = max
-      if (top <= 0) top = 0
-      if (top >= max) top = max
-
-      mask.style.left = left + 'px'
-      mask.style.top = top + 'px'
-
-      // big.img.style.left = -2 * left + 'px'
-      // big.img.style.top = -2 * top + 'px'
-      big.style.left = -2 * left + 'px'
-      big.style.top = -2 * top + 'px'
-    }
   }
 }
 </script>
@@ -63,27 +38,9 @@ export default {
     height: 100%;
   }
 
-  .event {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 998;
-  }
+ 
 
-  .mask {
-    width: 50%;
-    height: 50%;
-    border-radius: 50%;
-    background: wheat;
-    // background-color: rgba(0, 255, 0, 0.3);
-    opacity: 0.4;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
-  }
+ 
 
   .big {
     width: 100%;
