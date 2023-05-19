@@ -21,6 +21,7 @@ export default {}
 
 <style scoped lang="less">
 .footer {
+  margin-top: 50px;
   background-color: #c5e9fa;
 
   .footer-container {

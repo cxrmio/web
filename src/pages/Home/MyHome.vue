@@ -13,11 +13,6 @@
 
 <script>
 import ListContainer from './ListContainer/ListContainer.vue'
-import TodayRecommend from './TodayRecommend/TodayRecommend.vue'
-import MyRank from './MyRank/MyRank.vue'
-import MyLike from './MyLike/MyLike.vue'
-import MyFloor from './MyFloor/MyFloor.vue'
-import MyBrand from './MyBrand/MyBrand.vue'
 import { mapState } from 'vuex'
 export default {
   name: 'MyHome',
@@ -28,12 +23,7 @@ export default {
     // this.$store.dispatch('getUserInfo')
   },
   components: {
-    ListContainer,
-    TodayRecommend,
-    MyRank,
-    MyLike,
-    MyFloor,
-    MyBrand
+    ListContainer
   },
   computed: {
     ...mapState({

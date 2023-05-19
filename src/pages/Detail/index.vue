@@ -16,10 +16,10 @@
         <!-- 左侧放大镜区域 -->
         <div class="previewWrap">
           <!--放大镜效果-->
-          <Zoom :skuImageList="skuImageList" />
+           <Zoom :skuImageList="skuImageList" /> 
           <!-- 小图列表 -->
           <ImageList :skuImageList="skuImageList" />
-        </div>
+        </div> 
         <!-- 右侧选择区域布局 -->
         <div class="InfoWrap">
           <div class="goodsDetail">
@@ -97,18 +97,6 @@
                 <li>机身内存：64GB</li>
               </ul>
               
-            </div>
-            <div id="two" class="tab-pane">
-              <p>规格与包装</p>
-            </div>
-            <div id="three" class="tab-pane">
-              <p>售后保障</p>
-            </div>
-            <div id="four" class="tab-pane">
-              <p>商品评价</p>
-            </div>
-            <div id="five" class="tab-pane">
-              <p>手机社区</p>
             </div>
           </div>
         </div>
@@ -407,7 +395,7 @@ export default {
     overflow: hidden;
 
     .aside {
-      width: 210px;
+      width: 10px;
       float: left;
       border: 1px solid #ccc;
 
@@ -494,8 +482,8 @@ export default {
     }
 
     .detail {
-      width: 980px;
-      float: right;
+      width: 1200px;
+      float: left;
 
       .fitting {
         border: 1px solid #ddd;
