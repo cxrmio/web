@@ -19,7 +19,7 @@ export default [
   { path: '/home', component: () => import('@/pages/Home/MyHome.vue'), meta: { show: true } },
   { path: '/login', component: () => import('@/pages/Login/MyLogin.vue'), meta: { show: false } },
   { path: '/register', component: () => import('@/pages/Register/MyRegister.vue'), meta: { show: false } },
-  // { name: 'search', path: '/search/:keyword?', component: () => import('@/pages/Search/MySearch.vue'), meta: { show: true } },
+  { name: 'search', path: '/search/:keyword?', component: () => import('@/pages/Search/MySearch.vue'), meta: { show: true } },
   { name: 'detail', path: '/detail/:skuId?', component: () => import('@/pages/Detail'), meta: { show: true } },
   { name: 'addcartsuccess', path: '/addcartsuccess', component: () => import('@/pages/AddCartSuccess'), meta: { show: true } },
   { name: 'goodscar', path: '/goodscar', component: () => import('@/pages/ShopCart'), meta: { show: true } },
