@@ -6,10 +6,7 @@
         <div class="loginform">
           <ul class="tab clearFix">
             <li>
-              <a href="##" style="border-right: 0">扫描登录</a>
-            </li>
-            <li>
-              <a href="##" class="current">账户登录</a>
+              <a href="##" class="current">登录</a>
             </li>
           </ul>
 
@@ -17,7 +14,7 @@
             <form action="##">
               <div class="input-text clearFix">
                 <span></span>
-                <input type="text" placeholder="邮箱/用户名/手机号" v-model="phone" />
+                <input type="text" placeholder="请输入邮箱/用户名/手机号" v-model="phone" />
               </div>
               <div class="input-text clearFix">
                 <span class="pwd"></span>
@@ -34,33 +31,13 @@
             </form>
 
             <div class="call clearFix">
-              <ul>
-                <li><img src="./images/qq.png" alt="" /></li>
-                <li><img src="./images/sina.png" alt="" /></li>
-                <li><img src="./images/ali.png" alt="" /></li>
-                <li><img src="./images/weixin.png" alt="" /></li>
-              </ul>
               <router-link class="register" to="/register">立即注册</router-link>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 底部 -->
-    <div class="copyright">
-      <ul>
-        <li>关于我们</li>
-        <li>联系我们</li>
-        <li>联系客服</li>
-        <li>商家入驻</li>
-        <li>营销中心</li>
-        <li>手机尚品汇</li>
-        <li>销售联盟</li>
-        <li>尚品汇社区</li>
-      </ul>
-      <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号</div>
-    </div>
+    
   </div>
 </template>
 
@@ -93,28 +70,26 @@ export default {
 .login-container {
   .login-wrap {
     height: 487px;
-    background-color: #e93854;
 
     .login {
       width: 1200px;
       height: 487px;
       margin: 0 auto;
-      background: url(./images/loginbg.png) no-repeat;
     }
 
     .loginform {
-      width: 420px;
+      left: 300px;
+      width: 600px;
       height: 406px;
       box-sizing: border-box;
       background: #fff;
-      float: right;
       top: 45px;
       position: relative;
       padding: 20px;
 
       .tab {
         li {
-          width: 50%;
+          width: 100%;
           float: left;
           text-align: center;
 
@@ -134,13 +109,13 @@ export default {
           .current {
             border-bottom: none;
             border-top-color: #28a3ef;
-            color: #e1251b;
+            color: black;
           }
         }
       }
 
       .content {
-        width: 380px;
+        width: 560px;
         height: 316px;
         box-sizing: border-box;
         border: 1px solid #ddd;
@@ -170,7 +145,7 @@ export default {
             }
 
             input {
-              width: 302px;
+              width: 460px;
               height: 32px;
               box-sizing: border-box;
               border: 1px solid #ccc;
@@ -199,14 +174,14 @@ export default {
           }
 
           .btn {
-            background-color: #e1251b;
+            background-color: #c5e9fa;
             padding: 6px;
             border-radius: 0;
             font-size: 16px;
             font-family: 微软雅黑;
             word-spacing: 4px;
-            border: 1px solid #e1251b;
-            color: #fff;
+            border: 1px solid #c5e9fa;
+            color: black;
             width: 100%;
             height: 36px;
             margin-top: 25px;

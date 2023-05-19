@@ -4,7 +4,6 @@
     <div class="register">
       <h3>
         注册新用户
-        <span class="go">我有账号，去 <a href="login.html" target="_blank">登陆</a> </span>
       </h3>
       <!-- <div class="content">
         <label>手机号:</label>
@@ -44,7 +43,7 @@
           </el-form-item>
           <el-form-item prop="tongyi">
             <el-checkbox-group v-model="ruleForm.tongyi">
-              <el-checkbox class="controls" label="同意协议并注册《尚品汇用户协议》" name="tongyi"></el-checkbox>
+              <el-checkbox class="controls" label="同意协议并注册《百草书院用户协议》" name="tongyi"></el-checkbox>
             </el-checkbox-group>
           </el-form-item>
         </el-form>
@@ -52,7 +51,7 @@
 
       <!-- <div class="controls">
         <input name="m1" type="checkbox" :checked="tongyi" />
-        <span>同意协议并注册《尚品汇用户协议》</span>
+        <span>同意协议并注册《百草书院用户协议》</span>
         <span class="error-msg">错误提示信息</span>
       </div> -->
       <div class="btn">
@@ -61,20 +60,7 @@
     </div>
 
     <!-- 底部 -->
-    <div class="copyright">
-      <ul>
-        <li>关于我们</li>
-        <li>联系我们</li>
-        <li>联系客服</li>
-        <li>商家入驻</li>
-        <li>营销中心</li>
-        <li>手机尚品汇</li>
-        <li>销售联盟</li>
-        <li>尚品汇社区</li>
-      </ul>
-      <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号</div>
-    </div>
+    
   </div>
 </template>
 
@@ -182,7 +168,7 @@ export default {
 
 <style lang="less" scoped>
 .plp {
-  background-color: #ececec;
+  background-color: #c5e9fa;
   border: 0;
   border-radius: 5px;
 }
@@ -203,20 +189,13 @@ export default {
     h3 {
       background: #ececec;
       margin: 0;
-      padding: 6px 15px;
+      padding: 6px 500px;
       color: #333;
       border-bottom: 1px solid #dfdfdf;
       font-size: 20.04px;
       line-height: 30.06px;
 
-      span {
-        font-size: 14px;
-        float: right;
-
-        a {
-          color: #e1251b;
-        }
-      }
+      
     }
 
     // div:nth-of-type(1) {
@@ -282,8 +261,8 @@ export default {
         outline: none;
         width: 270px;
         height: 36px;
-        background: #e1251b;
-        color: #fff !important;
+        background: c5e9fa;
+        color: black !important;
         display: inline-block;
         font-size: 16px;
       }

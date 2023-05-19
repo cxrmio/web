@@ -36,9 +36,7 @@
           </li>
           <li class="cart-list-con7">
             <a class="sindelet" @click="removeGoodscat(item.skuId)">删除</a>
-            <br />
-            <a href="#none">移到收藏</a>
-          </li>
+          </li> 
         </ul>
       </div>
     </div>
@@ -49,13 +47,11 @@
       </div>
       <div class="option">
         <a @click="removeAllchecked">删除选中的商品</a>
-        <a href="#none">移到我的关注</a>
-        <a href="#none">清除下柜商品</a>
       </div>
       <div class="money-box">
-        <div class="chosed">已选择 <span>110</span>件商品</div>
+        <div class="chosed">已选择 <span>7</span>件商品</div>
         <div class="sumprice">
-          <em>总价（不含运费） ：</em>
+          <em>总价 ：</em>
           <i class="summoney">{{ totalPrice }}</i>
         </div>
         <div class="sumbtn">
@@ -370,11 +366,11 @@ export default {
           width: 96px;
           height: 52px;
           line-height: 52px;
-          color: #fff;
+          color: black;
           text-align: center;
           font-size: 18px;
           font-family: 'Microsoft YaHei';
-          background: #e1251b;
+          background: #c5e9fa;
           overflow: hidden;
         }
       }
