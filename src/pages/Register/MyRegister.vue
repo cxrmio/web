@@ -28,15 +28,12 @@
       </div> -->
       <div class="pop">
         <el-form :model="ruleForm" :rules="registerRules" label-position="right" ref="ruleForm" label-width="430px">
-          <el-form-item label="手机号:" prop="phone">
-            <el-input v-model="ruleForm.phone" placeholder="请输入手机号"></el-input>
+          <el-form-item label="账号:" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="请输入账号"></el-input>
           </el-form-item>
-          <el-form-item label="验证码:" prop="code">
-            <el-input v-model="ruleForm.code" placeholder="请输入验证码"></el-input>
-            <button style="height: 37px; width: 87px; margin-left: 3px" class="plp" @click="getphone(ruleForm.phone)">获取验证码</button>
-          </el-form-item>
-          <el-form-item label="登录密码:" type="password" prop="password">
-            <el-input v-model="ruleForm.password" placeholder="请输入登录密码" type="password"></el-input>
+          
+          <el-form-item label="密码:" type="password" prop="password">
+            <el-input v-model="ruleForm.password" placeholder="请输入密码" type="password"></el-input>
           </el-form-item>
           <el-form-item label="确认密码:" prop="password1">
             <el-input v-model="ruleForm.password1" type="password" placeholder="请输入确认密码"></el-input>
@@ -71,7 +68,7 @@ export default {
     // 这个方法要写在用到这个方法的地方的前面
     const checkPhone = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('手机号不能为空'))
+        return callback(new Error('账号不能为空'))
       } else {
         const reg = /^1[3-9][0-9]\d{8}$/
         // 这里定义的reg变量没有加引号，所以是一种特殊的数据类型，即正则，可以直接用test()方法
@@ -79,7 +76,7 @@ export default {
           callback()
         } else {
           // 具体错误信息没有提示
-          return callback(new Error('请输入正确的手机号'))
+          return callback(new Error('请输入正确的账号'))
         }
       }
     }
@@ -118,13 +115,10 @@ export default {
       },
       registerRules: {
         phone: [
-          { required: true, min: 11, message: '手机号不足11位', trigger: 'blur' },
+          { required: true, min: 11, message: '账号不足10位', trigger: 'blur' },
           { validator: checkPhone, trigger: 'blur' }
         ],
-        code: [
-          { required: true, message: '验证码', trigger: 'blur' },
-          { min: 6, max: 6, message: '请六位数字的验证码', trigger: 'blur' }
-        ],
+        
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur' },
@@ -140,15 +134,7 @@ export default {
     }
   },
   methods: {
-    // 获取验证码
-    async getphone(phone) {
-      try {
-        phone && (await this.$store.dispatch('getphoneCode', phone))
-        this.ruleForm.code = this.$store.state.loginANdregister.code
-      } catch (error) {
-        alert(error.message)
-      }
-    },
+    
     // 注册账号
     async addRegister(phone, password, code, password1) {
       this.$refs.ruleForm.validate(async (valid) => {

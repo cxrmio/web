@@ -23,20 +23,20 @@ export default [
   { name: 'detail', path: '/detail/:skuId?', component: () => import('@/pages/Detail'), meta: { show: true } },
   { name: 'addcartsuccess', path: '/addcartsuccess', component: () => import('@/pages/AddCartSuccess'), meta: { show: true } },
   { name: 'goodscar', path: '/goodscar', component: () => import('@/pages/ShopCart'), meta: { show: true } },
-  // {
-  //   name: 'mytrade',
-  //   path: '/trade',
-  //   component: () => import('@/pages/Trade'),
-  //   meta: { show: true },
-  //   beforeEnter: (to, from, next) => {
-  //     // ... 路由独享守卫
-  //     if (from.path === '/goodscar') {
-  //       next()
-  //     } else {
-  //       next(false)
-  //     }
-  //   }
-  // }
+  {
+    name: 'mytrade',
+     path: '/trade',
+     component: () => import('@/pages/Trade'),
+     meta: { show: true },
+     beforeEnter: (to, from, next) => {
+       // ... 路由独享守卫
+       if (from.path === '/goodscar') {
+         next()
+       } else {
+         next(false)
+       }
+     }
+   }
   // {
   //   name: 'mypay',
   //   path: '/pay',

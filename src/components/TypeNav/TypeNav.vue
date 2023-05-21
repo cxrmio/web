@@ -11,24 +11,11 @@
         <transition name="sort">
           <div class="sort" v-show="navShow">
             <div class="all-sort-list2" @click="goSearch($event)">
-              <div class="item" v-for="(c1, index) in catelistll" :key="c1.categoryId" :class="index == currentIndex ? 'cur' : ''">
+              <div class="item" v-for="(c1, index) in navdata" :key="index" :class="index == currentIndex ? 'cur' : ''">
                 <h3 @mouseenter="showStyle(index)">
-                  <a :data-categoryName="c1.categoryName" :data-category1Id="c1.categoryId">{{ c1.categoryName }}</a>
+                  <a :data-categoryName="c1.navdataName" :data-category1Id="c1.index">{{ c1.name }}</a>
                 </h3>
-                <div class="item-list clearfix" :style="{ display: index == currentIndex ? 'block' : 'none' }">
-                  <div class="subitem" v-for="c2 in c1.categoryChild" :key="c2.categoryId">
-                    <dl class="fore">
-                      <dt>
-                        <a :data-categoryName="c2.categoryName" :data-category2Id="c2.categoryId">{{ c2.categoryName }}</a>
-                      </dt>
-                      <dd>
-                        <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
-                          <a :data-categoryName="c3.categoryName" :data-category3Id="c3.categoryId">{{ c3.categoryName }}</a>
-                        </em>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -47,7 +34,61 @@ export default {
   data() {
     return {
       currentIndex: -1,
-      navShow: true
+      navShow: true,
+      navdata:[
+        {
+          name:'经典著作.哲学类'
+        },
+        {
+          name:'社会科学.政治法律'
+        },
+        {
+          name:'军事科学.财经管理'
+        },
+        {
+          name:'历史地理.文化教育'
+        }
+        ,
+        {
+          name:'小学文教.初中文教'
+        }
+        ,
+        {
+          name:'高中文教.语言文学'
+        }
+        ,
+        {
+          name:'中国文学.外国文学'
+        }
+        ,
+        {
+          name:'音乐.美术雕塑'
+        }
+        ,
+        {
+          name:'摄影影视.舞蹈戏剧'
+        }
+        ,
+        {
+          name:'书法篆刻.自然科学'
+        }
+        ,
+        {
+          name:'数理化学.医药卫生'
+        }
+        ,
+        {
+          name:'农业科学.工业技术'
+        }
+        ,
+        {
+          name:'计算机技术.建筑工程'
+        }
+        ,
+        {
+          name:'生活休闲.少儿读物'
+        }
+      ]
     }
   },
   mounted() {
