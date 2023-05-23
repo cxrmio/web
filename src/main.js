@@ -21,14 +21,7 @@ import * as API from '@/api'
 
 // 导入element-ui组件
 import { Button, MessageBox, Form, FormItem, Input, CheckboxGroup, Checkbox } from 'element-ui'
-// 图片懒加载
-import VueLazyload from 'vue-lazyload'
-import atm from '@/assets/images/111.gif'
 
-Vue.use(VueLazyload, {
-  // 默认加载的图片
-  loading: atm
-})
 
 // 注册element为全局组件
 Vue.use(Button)

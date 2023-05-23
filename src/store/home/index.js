@@ -1,5 +1,5 @@
 // home模块的小仓库
-import { reqCategoryList, reqListContainer, reqFloorList } from '@/api/index.js'
+import { reqCategoryList, reqListContainer } from '/src/api/index.js'
 const state = {
   castList: [],
   bannerlist: [],
@@ -32,12 +32,6 @@ const actions = {
       commit('reqBannerList', result.data)
     }
   },
-  // floor底部轮播图
-  async getFloorList({ commit }) {
-    const res = await reqFloorList()
-    // console.log(res.data)
-    commit('getFool', res.data)
-  }
 }
 const getters = {}
 

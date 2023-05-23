@@ -5,27 +5,6 @@
       <h3>
         注册新用户
       </h3>
-      <!-- <div class="content">
-        <label>手机号:</label>
-        <input type="text" placeholder="请输入你的手机号" v-model="phone" />
-        <span class="error-msg">错误提示信息</span>
-      </div>
-      <div class="content">
-        <label>验证码:</label>
-        <input type="text" placeholder="请输入验证码" v-model="code" />
-        <button style="height: 38px; width: 90px; margin-left: 2px" @click="getphone(phone)">获取验证码</button>
-        <span class="error-msg">错误提示信息</span>
-      </div>
-      <div class="content">
-        <label>登录密码:</label>
-        <input type="password" v-model="password" placeholder="请输入你的登录密码" />
-        <span class="error-msg">错误提示信息</span>
-      </div>
-      <div class="content">
-        <label>确认密码:</label>
-        <input type="password" v-model="password1" placeholder="请输入确认密码" />
-        <span class="error-msg">错误提示信息</span>
-      </div> -->
       <div class="pop">
         <el-form :model="ruleForm" :rules="registerRules" label-position="right" ref="ruleForm" label-width="430px">
           <el-form-item label="账号:" prop="phone">
@@ -45,12 +24,6 @@
           </el-form-item>
         </el-form>
       </div>
-
-      <!-- <div class="controls">
-        <input name="m1" type="checkbox" :checked="tongyi" />
-        <span>同意协议并注册《百草书院用户协议》</span>
-        <span class="error-msg">错误提示信息</span>
-      </div> -->
       <div class="btn">
         <button @click="addRegister(ruleForm.phone, ruleForm.password, ruleForm.code, ruleForm.password1)">完成注册</button>
       </div>

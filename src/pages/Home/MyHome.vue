@@ -3,11 +3,7 @@
     <!-- 三级联动全局组件 -->
     <type-nav></type-nav>
     <list-container></list-container>
-    <today-recommend></today-recommend>
-    <my-rank></my-rank>
-    <my-like></my-like>
     <my-floor v-for="item in floorList" :key="item.id" :list="item"></my-floor>
-    <my-brand></my-brand>
   </div>
 </template>
 

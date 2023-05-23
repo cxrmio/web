@@ -1,14 +1,7 @@
 <template>
   <!-- ---------------- -->
   <!-- 分页器 -->
-  <!--  <pagi-nation :total="total"
-          :currentpage="searchParams.pageNo"
-          :pagesize="searchParams.pageSize"
-          :continuous="5"
-          @getPageInfo="getPageInfo">
-          </pagi-nation> -->
-
-  <!-- props: ['currentpage', 'total', 'pagesize', 'continuous'], -->
+  
 
   <!-- -------------------- -->
   <div class="pagination">

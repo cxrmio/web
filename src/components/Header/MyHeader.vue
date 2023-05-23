@@ -54,14 +54,7 @@ export default {
   methods: {
     // 点击按钮 跳转搜索页面
     goSearch() {
-      // this.$router.push('/search/' + this.keyword + '?k=' + this.keyword.toUpperCase())
-      // this.$router.push('/search/' + this.keyword)
-      // -----------------------------------------------------------------------------------------------
-      // this.$router.push({
-      //   name: 'search',
-      //   params: { keyword: this.keyword || undefined }
-      // })
-
+      
       if (this.$route.query) {
         const location = {
           name: 'search',

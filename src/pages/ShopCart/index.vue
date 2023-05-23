@@ -11,7 +11,7 @@
         <div class="cart-th6">操作</div>
       </div>
       <div class="cart-body">
-        <ul class="cart-list" v-for="item in cartInfoList" :key="item.id">
+        <ul class="cart-list" v-for="(item,index) in newdata" :key="index">
           <li class="cart-list-con1">
             <input type="checkbox" name="chk_list" :checked="item.isChecked == 1" @change="updateChecked(item, $event)" />
           </li>
@@ -21,18 +21,14 @@
           </li>
 
           <li class="cart-list-con4">
-            <span class="price">{{ item.skuPrice }}.00</span>
+            <span class="price">{{ item.skuPrice }}</span>
           </li>
           <li class="cart-list-con5">
-            <!-- 修改商品数量按钮 -->
-            <!-- <a href="javascript:void(0)" class="mins" :disabled="item.skuNum == 1" @click="handler('mins', -1, item)">-</a> -->
-            <button class="mins" :disabled="item.skuNum == 1" @click="handler('mins', -1, item)">-</button>
+            <!-- 修改商品数量 -->
             <input autocomplete="off" type="text" :value="item.skuNum" minnum="1" class="itxt" @change="handler('change', $event.target.value * 1, item)" />
-            <button class="plus" @click="handler('add', 1, item)">+</button>
-            <!-- <a href="javascript:void(0)" class="plus" @click="handler('add', 1, item)">+</a> -->
           </li>
           <li class="cart-list-con6">
-            <span class="sum">{{ item.skuPrice * item.skuNum }}.00</span>
+            <span class="sum">{{ item.skuPrice * item.skuNum }}</span>
           </li>
           <li class="cart-list-con7">
             <a class="sindelet" @click="removeGoodscat(item.skuId)">删除</a>
@@ -52,7 +48,7 @@
         <div class="chosed">已选择 <span>7</span>件商品</div>
         <div class="sumprice">
           <em>总价 ：</em>
-          <i class="summoney">{{ totalPrice }}</i>
+          <i class="summoney">199.98</i>
         </div>
         <div class="sumbtn">
           <!-- <a class="sum-btn" >结算</a> -->
@@ -69,6 +65,24 @@ import { mapGetters } from 'vuex'
 import { throttle } from 'lodash'
 export default {
   name: 'ShopCart',
+  data(){
+    return{
+        newdata:[
+          {  id:'1',
+            imgUrl:'./images/book3.jpg',
+            skuName:'安徒生童话',
+            skuPrice:'49.99',
+            skuNum:'2'
+        },
+        {  id:'2',
+            imgUrl:'./images/book2.jpg',
+            skuName:'共鸣的灵魂',
+            skuPrice:'39.99',
+            skuNum:'3'
+        }
+        ]
+    }
+  },
   mounted() {
     this.getData()
   },

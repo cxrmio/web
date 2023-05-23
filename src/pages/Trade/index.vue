@@ -1,34 +1,26 @@
 <template>
   <div class="trade-container">
-    <h3 class="title">填写并核对订单信息</h3>
     <div class="content">
-      <h5 class="receive">收件人信息</h5>
-      <div class="address clearFix" v-for="item in adressInfo" :key="item.id">
-        <span class="username" :class="{ selected: item.isDefault == 1 }"> {{ item.consignee }}</span>
-        <p @click="adressActive(item, adressInfo)">
-          <span class="s1">{{ item.fullAddress }}</span>
-          <span class="s2">{{ item.phoneNum }}</span>
-          <span class="s3" v-show="item.isDefault == 1">默认地址</span>
-        </p>
-      </div>
+      <h5 class="receive">收件人地址：福建省莆田市莆田学院凤达</h5>
+      <h5 class="receive">收件人姓名：百草  收件人电话号码：12306</h5>
 
       <div class="line"></div>
       <h5 class="pay">支付方式</h5>
       <div class="address clearFix">
-        <span class="username selected">在线支付</span>
-        <span class="username" style="margin-left: 5px">货到付款</span>
+        <span class="username selected">支付宝</span>
+        <span class="username" style="margin-left: 5px">微信支付</span>
       </div>
       <div class="line"></div>
       <h5 class="pay">送货清单</h5>
       <div class="way">
         <h5>配送方式</h5>
         <div class="info clearFix">
-          <span class="s1">天天快递</span>
-          <p>配送时间：预计8月10日（周三）09:00-15:00送达</p>
+          <span class="s1">圆通快递</span>
+          <p>配送时间：预计7月17日（周三）09:00-15:00送达</p>
         </div>
       </div>
       <div class="detail">
-        <h5>商品清单</h5>
+        <h5>配送服务：快递 免邮 送运费险 付款后五天内发货</h5>
         <ul class="list clearFix" v-for="item in orderInfo.detailArrayList" :key="item.skuId">
           <li>
             <img :src="item.imgUrl" style="width: 100px; height: 100px" />
@@ -45,13 +37,12 @@
         </ul>
       </div>
       <div class="bbs">
-        <h5>买家留言：</h5>
-        <textarea placeholder="建议留言前先与商家沟通确认" v-model="msg" class="remarks-cont"></textarea>
+        <h5>订单备注：</h5>
+        <textarea placeholder="无备注" v-model="msg" class="remarks-cont"></textarea>
       </div>
       <div class="line"></div>
       <div class="bill">
         <h5>发票信息：</h5>
-        <div>普通发票（电子） 个人 明细</div>
         <h5>使用优惠/抵用</h5>
       </div>
     </div>
@@ -62,7 +53,7 @@
             ><i>{{ orderInfo.totalNum }}</i
             >件商品，总商品金额</b
           >
-          <span>¥{{ orderInfo.totalAmount }}.00</span>
+          <span>¥199.98</span>
         </li>
         <li>
           <b>返现：</b>
@@ -76,14 +67,9 @@
     </div>
     <div class="trade">
       <div class="price">
-        应付金额: <span>¥{{ orderInfo.totalAmount }}.00</span>
+        应付金额: <span>¥199.98</span>
       </div>
-      <div class="receiveInfo">
-        寄送至:
-        <span>{{ adressINfo.fullAddress }}</span>
-        收货人：<span>{{ adressINfo.consignee }}</span>
-        <span>{{ adressINfo.phoneNum }}</span>
-      </div>
+      
     </div>
     <div class="sub clearFix">
       <!-- <router-link class="subBtn" to="/pay">提交订单</router-link> -->
@@ -146,14 +132,7 @@ export default {
       adressInfo: (state) => state.trande.adress,
       orderInfo: (state) => state.trande.orderInfo
     }),
-    // 选择的地址信息变化了,底下的实际地址也要发生变化
-    adressINfo() {
-      return (
-        this.adressInfo.find((item) => {
-          return item.isDefault === '1'
-        }) || {}
-      )
-    }
+    
   }
 }
 </script>
@@ -170,7 +149,7 @@ export default {
   .content {
     width: 1200px;
     margin: 10px auto 0;
-    border: 1px solid rgb(221, 221, 221);
+    border: 1px solid #c5e9fa;
     padding: 25px;
     box-sizing: border-box;
 
@@ -202,11 +181,11 @@ export default {
         position: absolute;
         right: 0;
         bottom: 0;
-        background: url(./images/choosed.png) no-repeat;
+        
       }
 
       .username.selected {
-        border-color: #e1251b;
+        border-color: #c5e9fa;
       }
 
       .username.selected::after {
@@ -286,7 +265,7 @@ export default {
     .detail {
       width: 1080px;
 
-      background: #feedef;
+      background: #c5e9fa;
       padding: 15px;
       margin: 2px auto 0;
 
@@ -306,12 +285,12 @@ export default {
           }
 
           h4 {
-            color: #c81623;
+            color: #c5e9fa;
             font-weight: 400;
           }
 
           h3 {
-            color: #e12228;
+            color: #c5e9fa;
           }
         }
       }
@@ -399,8 +378,8 @@ export default {
       font: 700 18px '微软雅黑';
       line-height: 56px;
       text-align: center;
-      color: #fff;
-      background-color: #e1251b;
+      color: black;
+      background-color: #c5e9fa;
     }
   }
 }

@@ -126,26 +126,17 @@ export default {
     },
     // 点击导航栏菜单路由传参
     goSearch(event) {
-      const { categoryname, category1id, category2id, category3id } = event.target.dataset
-      if (categoryname) {
-        const query = { categoryName: categoryname }
-        if (category1id) {
-          query.category1Id = category1id
-        } else if (category2id) {
-          query.category2Id = category2id
-        } else if (category3id) {
-          query.category3Id = category3id
-        }
+      
         // this.$router.push({ name: 'search', query: query })
         // 合并参数进行跳转
-        if (this.$route.params) {
-          this.$router.push({ name: 'search', query: query, params: this.$route.params })
-        }
+    
+          this.$router.push('search')
+        
       }
       // console.log(categoryname)
 
       // this.$router.push({name:"search", query: {}})
-    }
+    
     // methods结尾
   }
 }

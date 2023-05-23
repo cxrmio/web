@@ -3,21 +3,7 @@
   <div class="list-container">
     <div class="sortList clearfix">
       <div class="center">
-        <!-- bannerlist -->
-        <!--banner轮播-->
-        <!-- <div class="swiper-container" id="mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="item in bannerlist" :key="item.id">
-              <img :src="item.imgUrl" />
-            </div>
-          </div>
-          如果需要分页器
-          <div class="swiper-pagination"></div>
-
-          如果需要导航按钮
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div> -->
+        
         <!-- ---------------------------------- -->
         <my-carsouse :imglist="bannerlist"></my-carsouse>
       </div>
@@ -47,47 +33,7 @@ export default {
       bannerlist: (state) => state.home.bannerlist
     })
   }
-  // watch侦听器侦听了bannerlist空数组的变化，保证了拿到了数据
-  // nextTick保证了结构渲染完毕了
-  // watch: {
-  //   bannerlist: {
-  //     immediate: true,
-  //     handler(newValue, oldValue) {
-  //       /* eslint-disable no-new */
-  //       this.$nextTick(() => {
-  //         new Swiper('.swiper-container', {
-  //           // direction: 'vertical',
-  //           loop: true,
-
-  //           // 如果需要分页器
-  //           pagination: {
-  //             el: '.swiper-pagination',
-  //             clickable: true // 设置小原店面可以切换
-  //           },
-  //           autoplay: {
-  //             delay: 5000
-  //             //  新版本的写法：目前是5版本
-  //             // pauseOnMouseEnter: true,
-  //             // // 如果设置为true，当切换到最后一个slide时停止自动切换
-  //             // stopOnLastSlide: true,
-  //             // // 用户操作swiper之后，是否禁止autoplay
-  //             // disableOnInteraction: false
-  //           },
-
-  //           // 如果需要前进后退按钮
-  //           navigation: {
-  //             nextEl: '.swiper-button-next',
-  //             prevEl: '.swiper-button-prev'
-  //           },
-
-  //           // 如果需要滚动条
-  //           scrollbar: '.swiper-scrollbar'
-  //         })
-  //       })
-  //       // ----------------------------------------
-  //     }
-  //   }
-  // }
+  
 }
 </script>
 
@@ -163,7 +109,6 @@ export default {
           width: 25%;
 
           .list-item {
-            background-image: url(~@/assets/images/icons.png);
             width: 61px;
             height: 40px;
             display: block;

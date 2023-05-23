@@ -1,16 +1,11 @@
 <template>
   <div>
-    <!-- <TypeNav /> -->
-    <type-nav></type-nav>
+   
+  
     <div class="main">
       <div class="py-container">
         <!--bread-->
         <div class="bread">
-          <ul class="fl sui-breadcrumb">
-            <li>
-              <a href="#">全部结果</a>
-            </li>
-          </ul>
           <ul class="fl sui-tag">
             <li class="with-x" v-show="searchParams.categoryName">{{ searchParams.categoryName }}<i @click="removeTabName">×</i></li>
             <li class="with-x" v-show="searchParams.keyword">{{ searchParams.keyword }}<i @click="removeTabkeyword">×</i></li>
@@ -19,53 +14,35 @@
           </ul>
         </div>
 
-        <!--selector-->
-        <!-- 不需要在这里接受参数 -->
-        <SearchSelector @tradeMar="addTrademar" @attrProps="attrProps" />
 
         <!--details-->
         <div class="details clearfix">
-          <div class="sui-navbar">
-            <div class="navbar-inner filter">
-              <ul class="sui-nav">
-                <li :class="isone" @click="btnsTogger('1')">
-                  <a
-                    >综合 <span v-show="isone"> {{ isUpDown }}</span>
-                  </a>
-                </li>
-
-                <li :class="{ active: istwo }" @click="btnsTogger('2')">
-                  <a
-                    >价格 <span v-show="istwo"> {{ isUpDown }}</span></a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
+        
           <div class="goods-list">
             <ul class="yui3-g">
-              <li class="yui3-u-1-5" v-for="item in goodsList" :key="item.id">
+              <li class="yui3-u-1-5" v-for="(item,index) in yourData" :key="index">
                 <div class="list-wrap">
                   <div class="p-img">
                     <!-- 路由跳转到详情页 -->
-                    <router-link :to="'/detail/' + item.id">
-                      <img v-lazy="item.defaultImg" />
+                    <router-link :to="'/detail'">
+                      <img :src="item.imgUrl" />
                     </router-link>
                   </div>
+                  <div class="addd">{{ item.name }}</div>
                   <div class="price">
                     <strong>
                       <em>¥</em>
-                      <i>{{ '\u2000' + item.price }}.00</i>
+                      <i>{{ '\u2000' + item.price }}.99</i>
                     </strong>
                   </div>
                   <div class="attr">
                     <a target="_blank" href="item.html" title="促销信息，下单即赠送三个月CIBN视频会员卡！【小米电视新品4A 58 火爆预约中】">{{ item.title }}</a>
                   </div>
                   <div class="commit">
-                    <i class="command">已有<span>2000</span>人评价</i>
+                    <i class="command">已有<span>200</span>人购买</i>
                   </div>
                   <div class="operate">
-                    <a href="success-cart.html" target="_blank" class="sui-btn btn-bordered btn-danger">加入购物车</a>
+                    <a href="#" target="_blank" class="sui-btn btn-bordered btn-danger">加入购物车</a>
                     <a href="javascript:void(0);" class="sui-btn btn-bordered">收藏</a>
                   </div>
                 </div>
@@ -81,7 +58,7 @@
 </template>
 
 <script>
-import SearchSelector from './SearchSelector/SearchSelector'
+
 import { mapGetters, mapState } from 'vuex'
 export default {
   name: 'MySearch',
@@ -97,8 +74,37 @@ export default {
         pageNo: 1,
         pageSize: 4,
         props: [],
-        trademark: ''
-      }
+        trademark: '',
+        
+
+      },
+      yourData:[
+          {
+            name:'心的栖止木',
+            imgUrl:'./images/book1.jpg',
+            price:49
+          },
+          {
+            name:'共鸣的灵魂',
+            imgUrl:'./images/book2.jpg',
+            price:39
+          },
+          {
+            name:'安徒生童话',
+            imgUrl:'./images/book3.jpg',
+            price:49
+          },
+          {
+            name:'城南旧事',
+            imgUrl:'./images/book4.jpg',
+            price:59
+          },
+          {
+            name:'守拙集',
+            imgUrl:'./images/book5.jpg',
+            price:39
+          },
+        ]
     }
   },
   beforeMount() {
@@ -106,6 +112,7 @@ export default {
   },
   mounted() {
     this.getSearchData()
+    console.log(this.goodsList);
   },
   methods: {
     // 请求数据，发送搜所参数
@@ -159,16 +166,7 @@ export default {
     },
     // 点击按钮，切换状态 1是综合 2是价格 order: '1:desc'
     btnsTogger(flag) {
-      // console.log(flag)
-      // // const newOrder = ''
-      // const isZjFlag = this.searchParams.order.split(':')[1]
-      // // const isFlag = this.searchParams.order.split(':')[0]
-      // let newOrder = ''
-      // if (flag === 1) {
-      //   newOrder = isZjFlag === 'desc' ? '1:asc' : '1:desc'
-      // } else {
-      //   newOrder = isZjFlag === 'desc' ? '2:asc' : '2:desc'
-      // }
+   
       const originFlag = this.searchParams.order.split(':')[0]
       const originSortType = this.searchParams.order.split(':')[1]
       // 准备一个新的数值，将来赋值给order
@@ -189,11 +187,6 @@ export default {
       this.searchParams.pageNo = res
       this.getSearchData()
     }
-  },
-
-  components: {
-    SearchSelector
-    //  TypeNav
   },
   computed: {
     ...mapGetters(['goodsList']),
@@ -236,8 +229,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.addd {
+  margin-left: 10px;
+}
 .main {
-  margin: 10px 0;
+  margin: auto 0;
+  font-size: large;
+  font-weight: 900;
 
   .py-container {
     width: 1200px;
@@ -346,7 +344,7 @@ export default {
 
               &.active {
                 a {
-                  background: #e1251b;
+                  background: black;
                   color: #fff;
                 }
               }
@@ -378,8 +376,8 @@ export default {
                   color: #666;
 
                   img {
-                    max-width: 100%;
-                    height: auto;
+                    width: 100%;
+                    height: 100%;
                     vertical-align: middle;
                   }
                 }
@@ -388,11 +386,11 @@ export default {
               .price {
                 padding-left: 15px;
                 font-size: 18px;
-                color: #c81623;
+                color: #247498;
 
                 strong {
                   font-weight: 700;
-
+blue
                   i {
                     margin-left: -5px;
                   }
@@ -462,12 +460,11 @@ export default {
                 }
 
                 .btn-danger {
-                  border: 1px solid #e1251b;
-                  color: #e1251b;
+                  border: 1px solid black;
+                  color: black;
 
                   &:hover {
-                    border: 1px solid #e1251b;
-                    background-color: #e1251b;
+                    border: 1px solid black;
                     color: white !important;
                     text-decoration: none;
                   }
